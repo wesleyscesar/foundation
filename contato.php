@@ -1,7 +1,5 @@
 <?php
 
-require_once ('menu.php');
-
 $tbNome     = isset($_POST['tbNome'])?$_POST['tbNome']:'';
 $tbEmail    = isset($_POST['tbEmail'])?$_POST['tbEmail']:'';
 $tbAssunto  = isset($_POST['tbAssunto'])?$_POST['tbAssunto']:'';
