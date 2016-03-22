@@ -39,4 +39,4 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <p class="text-success"><?php echo $mensagem; ?></p>
 
-<?php require_once ('rodape.php'); ?>
+<?php require_once('footer.php'); ?>

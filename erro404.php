@@ -1,1 +1,1 @@
-<h1>PAGINA INCORRETA</h1>
+<?php echo "aqui"; ?>
