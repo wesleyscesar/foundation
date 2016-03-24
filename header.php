@@ -25,7 +25,7 @@
 
     <div id="navbarCollapse" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-            <li><a href="index">Home</a></li>
+            <li><a href="home">Home</a></li>
             <li><a href="#">Empresa</a></li>
             <li><a href="#">Produtos</a></li>
             <li><a href="#">Serviços</a></li>
