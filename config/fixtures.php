@@ -20,9 +20,9 @@ $conn->query("CREATE TABLE rotas (
 # INSERINDO INFORMAÇOES
 
 $rotas = array(
-    0 => array(rota=>"home", titulo=>"Home", conteudo=>"Pagina inicial"),
-    1 => array(rota=>"empresa", titulo=>"Empresa", conteudo=>"Informacoes sobre a pagina empresa"),
-    2 => array(rota=>"contato", titulo=>"Contato", conteudo=>"form")
+    0 => array("rota"=>"home", "titulo"=>"Home", "conteudo"=>"Pagina inicial"),
+    1 => array("rota"=>"empresa", "titulo"=>"Empresa", "conteudo"=>"Informacoes sobre a pagina empresa"),
+    2 => array("rota"=>"contato", "titulo"=>"Contato", "conteudo"=>"form")
 );
 
 foreach($rotas as $rota)
