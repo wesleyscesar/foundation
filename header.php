@@ -1,5 +1,3 @@
-<?php require_once('./funcoes/rota.php'); ?>
-
 <html>
 <head>
     <title>Primeira Pagina </title>
@@ -30,6 +28,7 @@
             <li><a href="#">Produtos</a></li>
             <li><a href="#">Serviços</a></li>
             <li><a href="contato">Contato</a></li>
+            <li><a href="config.php">Configuraçoes</a></li>
         </ul>
     </div>
 
