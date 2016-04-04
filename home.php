@@ -1,3 +1,21 @@
+<?php
+
+define('CLASS_DIR', 'src/');
+set_include_path(get_include_path().PATH_SEPARATOR.CLASS_DIR);
+spl_autoload_register(function ($class){
+    require_once(str_replace('\\','/',$class . '.php'));
+});
+
+$conexao = new Wesley\Config\Conexao();
+$rotas = new Wesley\Rota\Rota($conexao);
+
+$pesquisa = isset($_POST['pesquisa'])?$_POST['pesquisa']:'';
+
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+    $links = $rotas->conteudo($link[1]);
+}
+
+?>
 
 <h1> Pagina Inicial </h1>
 <form class="form-inline" method="post">

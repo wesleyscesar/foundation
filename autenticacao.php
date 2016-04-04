@@ -1,5 +1,6 @@
-
 <?php
+
+session_start();
 
 require_once "header.php";
 
@@ -15,10 +16,12 @@ $usuario = new Wesley\Usuario\Usuario($conexao);
 $tbLogin = isset($_POST['tbLogin'])?$_POST['tbLogin']:'';
 $tbSenha = isset($_POST['tbSenha'])?$_POST['tbSenha']:'';
 
+$_SESSION['autenticacao'] = 0;
+
 if($_SERVER["REQUEST_METHOD"] == "POST") {
     if($usuario->autenticar($tbLogin,$tbSenha) > 0) {
         $_SESSION['autenticacao'] = 1;
-        echo "logado";
+        header("location: administracao.php");
     } else {
         echo "Usuario ou Senha Invalidos";
     }
@@ -26,21 +29,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 ?>
-
-<!DOCTYPE HTML>
-<html>
-<head>
-    <title>Login</title>
-    <meta charset="UTF-8" />
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <!-- Chamadas JS -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-
-</head>
-
-<body>
 
 <form action="" method="post" class="box login">
     <fieldset class="boxBody">
@@ -58,5 +46,3 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         <label><font color="red"><?php echo $msg; ?></font></label>
     </footer>
 </form>
-</body>
-</html>

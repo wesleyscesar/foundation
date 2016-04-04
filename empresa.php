@@ -1,10 +1,20 @@
 <?php
 
-    $conteudo = isset($_GET['conteudo'])?$_GET['conteudo']:'';
-    $titulo   = isset($_GET['titulo'])?$_GET['titulo']:'';
+define('CLASS_DIR', 'src/');
+set_include_path(get_include_path().PATH_SEPARATOR.CLASS_DIR);
+spl_autoload_register(function ($class){
+    require_once(str_replace('\\','/',$class . '.php'));
+});
+
+$conexao = new Wesley\Config\Conexao();
+$rotas = new Wesley\Rota\Rota($conexao);
+
+$url = $_SERVER['REQUEST_URI'];
+
+$link = explode("/",$url);
+
+$result = $rotas->getPagina($link[1]);
+
+echo $result['conteudo'];
 
 ?>
-
-<h1><?php echo $titulo; ?></h1>
-<br>
-<h3><?php echo $conteudo; ?></h3>

@@ -1,7 +1,5 @@
 <?php
 
-require_once ('header.php');
-
 define('CLASS_DIR', 'src/');
 set_include_path(get_include_path().PATH_SEPARATOR.CLASS_DIR);
 spl_autoload_register(function ($class){
@@ -9,11 +7,7 @@ spl_autoload_register(function ($class){
 });
 
 $conexao = new Wesley\Config\Conexao();
-//$fixtures = new Wesley\Config\Fixtures($conexao);
-$rotas = new Wesley\Rota\Rota($conexao);
+$fixtures = new Wesley\Config\Fixtures($conexao);
 
-require_once ($rotas->rota());
-
-require_once ('footer.php');
-
+header("location: index.php");
 ?>

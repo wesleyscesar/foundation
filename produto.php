@@ -1,19 +1,20 @@
 <?php
 
-require_once ('header.php');
-
 define('CLASS_DIR', 'src/');
 set_include_path(get_include_path().PATH_SEPARATOR.CLASS_DIR);
 spl_autoload_register(function ($class){
-    require_once(str_replace('\\','/',$class . '.php'));
+require_once(str_replace('\\','/',$class . '.php'));
 });
 
 $conexao = new Wesley\Config\Conexao();
-//$fixtures = new Wesley\Config\Fixtures($conexao);
 $rotas = new Wesley\Rota\Rota($conexao);
 
-require_once ($rotas->rota());
+$url = $_SERVER['REQUEST_URI'];
 
-require_once ('footer.php');
+$link = explode("/",$url);
+
+$result = $rotas->getPagina($link[1]);
+
+echo $result['conteudo'];
 
 ?>
